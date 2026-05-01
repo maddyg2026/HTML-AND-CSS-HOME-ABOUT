@@ -1,0 +1,175 @@
+
+/* Removes default spacing */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+
+/* NAVBAR */
+
+/* make it sticky*/
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #c32105; 
+  padding: 10px 20px;
+  z-index: 999;
+}
+
+/* links in row */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo word styling */
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navigation links container */
+nav ul {
+   list-style: none; 
+  display: flex;
+  gap: 30px; /* space between links */
+}
+
+/* Navigation links */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+}
+/* Underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #444801;
+  transition: width 0.3s ease;
+}
+
+/* On hover */
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #351f03;
+}
+
+.btn:active {
+  transform: scale(0.90);
+}
+
+
+
+/* Footer */
+
+footer {
+  background-color: #c62828;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+
+/* Maburger menu */
+
+/* Hidden by default (only shows on mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer; /* shows clickable cursor */
+}
+
+/* Menu Special section */
+
+#specialty-pizzas img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/*need space to not get cut off by navbar*/
+#specialty-pizzas {
+  padding-top: 50px;
+}
+#specialty-pizzas .col-md-3 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+/* menu classics section*/
+
+#classics img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#classics .col-md-4 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+/* menu sides*/
+
+#sides img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+#sides .col-md-3 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+/* responsive */
+
+/* Applies styles when screen is mobile size */
+@media (max-width: 768px) {
+
+  /* Hides normal nav and turns into dropdown */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #c62828;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+  }
+
+  /* Shows menu when JS adds "active" class */
+  nav ul.active {
+    display: flex;
+  }
+
+  /* Shows hamburger icon on mobile */
+  .menu-toggle {
+    display: block;
+  }
